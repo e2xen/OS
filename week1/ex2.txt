@@ -1,0 +1,26 @@
+    1  cd
+    2  ls
+    3  cd Deskto
+    4  cd Рабочий\ стол/
+    5  ls
+    6  mkdir OS
+    7  mv /Р
+    8  mv Рабочий\ стол/ Desktop
+    9  ls
+   10  cd Desktop/
+   11  cd ..
+   12  mv Desktop desktop
+   13  ls
+   14  cd desktop/
+   15  cd OS
+   16  mkdir week1
+   17  cd week1/
+   18  gcc
+   19  ls /usr/bin
+   20  ls /usr/bin | grep gcc
+   21  ls /usr/bin | grep gcc | sort -r
+   22* ls /usr/bin | grep gcc | sort -r > ex1.txt
+   23  gedit ex1.txt 
+   24  cat > ex1.sh
+   25  gedit ex1.sh
+   26  history > ex2.txt
