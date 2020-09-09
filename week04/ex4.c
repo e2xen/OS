@@ -16,6 +16,7 @@ int main(int argc, char *argv[], char *envp[]) {
     for (int i = 0; i < 16; i++)
         cmd[i] = malloc(64*sizeof(char));
 
+    // tokenize the input
     int counter = 1;
     cmd[0] = strtok(inp, " ");
     while (cmd[counter-1] != NULL) {
@@ -27,10 +28,6 @@ int main(int argc, char *argv[], char *envp[]) {
     }
     counter--;
 
-    // for (int i = 0; cmd[i]; i++)
-    //      printf(" %s", cmd[i]);
-    // printf("end, counter = %d\n", counter);
-
     if (!strcmp(cmd[counter-1], "&")) {
         if (fork() == 0) {
             printf("[%d]\n", getpid());
@@ -41,7 +38,6 @@ int main(int argc, char *argv[], char *envp[]) {
           sleep(1);
         }
     } else {
-        //printf("parent [%d]\n", getpid());
         cmd[counter] = NULL;
         execvp(cmd[0], cmd);
     }
