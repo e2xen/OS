@@ -1,0 +1,16 @@
+top - 21:01:28 up 1 day, 22:03,  6 users,  load average: 0,60, 0,37, 0,25
+Tasks: 387 total,   1 running, 386 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0,4 us,  1,1 sy,  0,0 ni, 98,1 id,  0,3 wa,  0,1 hi,  0,0 si,  0,0 st
+MiB Mem :  32103,6 total,  13904,5 free,   8436,8 used,   9762,4 buff/cache
+MiB Swap:  32000,0 total,  32000,0 free,      0,0 used.  22954,3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                                                      
+ 316669 maxim_p+  20   0 8390976   8,0g   1008 S  18,0  25,5   0:01.45 ex2                                                                                                                          
+ 312614 root      20   0  147716  98776  57032 S   2,0   0,3   0:44.17 Xorg                                                                                                                         
+    989 root     -51   0       0      0      0 S   1,0   0,0   5:29.95 irq/83-nvidia                                                                                                                
+ 316569 maxim_p+  20   0   10224   6200   3464 S   1,0   0,0   0:01.17 htop                                                                                                                         
+      1 root      20   0  175752  12316   9132 S   0,0   0,0   0:01.07 systemd                                                                                                                      
+      2 root      20   0       0      0      0 S   0,0   0,0   0:00.02 kthreadd
+
+
+As we see, the load on the processoor is high since it is constantly allocating new memory.

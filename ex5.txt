@@ -1,0 +1,3 @@
+Virtual address belongs to the virtual memory, while physical to physocal one.
+Virtual memory is a memory managment tool which allows programs to be tricked to think that they have their own (almost) infinite memory, while in reality they
+share the same piece of limited hardware with other programs.
