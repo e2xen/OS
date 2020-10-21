@@ -1,0 +1,4 @@
+1) if we reference the same page n+1 times, which is not already in memory, the hit/miss ratio will be n/1 = n
+  k k k k ... k (n+1 times)
+2) if we reference a different page each time, the hit/miss ratio will be 0, since there were 0 hits
+  1 2 3 ... n
