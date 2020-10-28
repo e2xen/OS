@@ -1,0 +1,3 @@
+When using standard C library's printf(), the output is line-buffered.
+This way the output in the first program is buffered and not outputted. After the fork we have two identical proccesses each having a buffered "Hello" string.
+This buffered string is printed only when the newline character is added to the buffer (after the fork).
