@@ -1,0 +1,51 @@
+// Without O_SYNC:
+// size 1
+[maxim_puska@k05m0navt week12]$ gcc -DBUF_SIZE=1 copy.c -o copy
+[maxim_puska@k05m0navt week12]$ time ./copy ex2.txt s.txt
+
+real    0m0,043s
+user    0m0,003s
+sys     0m0,040s
+// size 8
+[maxim_puska@k05m0navt week12]$ gcc -DBUF_SIZE=8 copy.c -o copy
+[maxim_puska@k05m0navt week12]$ time ./copy ex2.txt s.txt
+
+real    0m0,007s
+user    0m0,000s
+sys     0m0,007s
+// size 64
+[maxim_puska@k05m0navt week12]$ gcc -DBUF_SIZE=64 copy.c -o copy
+[maxim_puska@k05m0navt week12]$ time ./copy ex2.txt s.txt
+
+real    0m0,001s
+user    0m0,000s
+sys     0m0,001s
+
+
+// With O_SYNC:
+// size 1
+[maxim_puska@k05m0navt week12]$ gcc -DBUF_SIZE=1 copy.c -o copy
+[maxim_puska@k05m0navt week12]$ time ./copy ex2.txt s.txt
+
+real    0m0,052s
+user    0m0,000s
+sys     0m0,052s
+// size 8
+[maxim_puska@k05m0navt week12]$ gcc -DBUF_SIZE=8 copy.c -o copy
+[maxim_puska@k05m0navt week12]$ time ./copy ex2.txt s.txt
+
+real    0m0,009s
+user    0m0,000s
+sys     0m0,009s
+// size 64
+[maxim_puska@k05m0navt week12]$ gcc -DBUF_SIZE=64 copy.c -o copy
+[maxim_puska@k05m0navt week12]$ time ./copy ex2.txt s.txt
+
+real    0m0,001s
+user    0m0,001s
+sys     0m0,000s
+
+
+Notes:
+With or without O_SYNC, the greater the buffer size, the lower the completion time, since the program makes more system calls and thus blocks.
+With O_SYNC, all the program makes more disk writes/reads to ensure file integrity completion.
